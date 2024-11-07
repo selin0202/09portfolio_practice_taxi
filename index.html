@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>tab practice</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <section>
+    <article>
+      <div class="heading">
+        <span>카카오 택시앱 활용 가이드</span>
+        <h1><em>카카오 택시</em><b> 모든 이동</b> 카카오톡 서비스 앱!</h1>
+      </div>
+      <div class="content">
+        <div class="accordion">
+          <div class="title active" data-image="images/app-capture-01.png">
+            이동에 필요한 모든 정보, 한 번에 찾아주는 통합검색!
+          </div>
+          <div class="desc active">
+            어떻게 갈까, 가는데 얼마나 걸릴까, 비용은?
+            이제 고민하지 말고, 홈에서 바로 목적지만 입력해보세요!
+            다양한 이동수단을 비교하고, 바로 호출에서 예약까지 할 수 있어요.
+          </div>
+          <div class="title" data-image="images/app-capture-02.png">
+            테마 별로 재구성된 상단탭
+          </div>
+          <div class="desc">
+          가장 많이 이용되는 메인 서비스들과 신규 서비스들은 홈 탭에서 쉽게 찾을 수 있어요.
+          운전자용 서비스들은 마이카 탭으로, 여행이나 장거리 이동에 필요한 서비스들은
+          여행 탭으로 모아두었으니, 필요에 맞춰 이용해 보세요.
+          </div>
+          <div class="title" data-image="images/app-capture-03.png">
+            나를 위한 똑똑한 정보
+          </div>
+          <div class="desc">
+            홈 화면을 위로 올려보세요.
+            현재 이용/예약 내역과 유용한 이벤트부터
+            맞춤 정보까지 확인할 수 있어요.
+          </div>
+          <div class="title" data-image="images/app-capture-04.png">
+            가장 간편한 결제,
+            카카오 T 포인트.
+          </div>
+          <div class="desc">
+            카카오 T 포인트를 충전해두면 카카오 T 앱에서 쉽게 사용 가능해요.
+            카카오 T 포인트 타운에서 포인트 적립을 위한 다양한 기회도 제공하고 있어요.
+            소중한 분들에게 기프트 카드로 포인트 선물도 가능합니다!
+          </div>
+        </div>
+        <div class="image">
+          <img src="images/app-capture-01.png">
+        </div>
+      </div>
+    </article>
+  </section>
+  <div class="btn_X" onclick="window.close()"></div>
+
+  <script>
+    $('.title').click(function(){
+      $(this).addClass('active')
+      $(this).siblings('.title').removeClass('active')
+      $(this).siblings('.desc').stop().slideUp()
+      $(this).next().stop().slideDown()
+
+      var dataImage = $(this).attr('data-image')
+      $('.image img').attr('src', dataImage)
+    })
+  </script>
+
+</body>
+</html>
